@@ -1,0 +1,23 @@
+<h2>world wide people's championship</h2>
+<h3>current champions</h3>
+<ul class="current-champions">
+	<li class="division">
+		<%= link_to 'O1900', division_champions_path(division: 'o1900') %>
+	</li>
+	<li class="champion">PetricPwnz</li>
+	<li class="division">
+		<%= link_to 'U1900', division_champions_path(division: 'U1900') %>
+	</li>
+	<li class="champion">Tokyto</li>
+	<li class="division">
+		<%= link_to 'U1500', division_champions_path(division: 'U1500') %>
+	</li>
+	<li class="champion">yorick</li>
+	<li class="division">
+		<%= link_to 'U1100', division_champions_path(division: 'U1100') %>
+	</li>
+	<li class="champion">sasin</li>
+</ul>
+info: you can click on the divisions<br>
+practice on some wwpc maps: <%= @randomMaps.join ' - '%>
+

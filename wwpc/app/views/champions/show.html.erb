@@ -1,0 +1,20 @@
+<h1>champion</h1>
+<div class="text">
+	<h2>details</h2>
+
+	<p>
+		<strong>name:</strong>
+		<%= @champion.name %>
+	</p>
+
+	<p>
+		<strong>division:</strong>
+		<%= @champion.division %>
+	</p>
+
+	<p>
+		<strong>defended:</strong>
+		<%= @champion.defended %>
+	</p>
+
+<br><%= link_to '> go back <', controller: 'champions', action: 'admin' %>

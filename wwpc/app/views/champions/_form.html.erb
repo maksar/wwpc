@@ -1,0 +1,31 @@
+<%= form_for @champion do |f| %>
+	<% if @champion.errors.any? %>
+		<div class="error_explanation">
+			<%= pluralize(@champion.errors.count, "error") %> prohobited this article from being saved:
+			<ul>
+				<% @champion.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :division %><br>
+		<%= f.text_field :division %>
+	</p>
+
+	<p>
+		<%= f.label :defended %><br>
+		<%= f.number_field :defended %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
