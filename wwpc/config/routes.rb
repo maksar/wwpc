@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'knockouts/index'
+
   devise_for :users
 
 	resources :champions do

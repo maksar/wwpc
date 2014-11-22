@@ -47,7 +47,7 @@ class ChampionsController < ApplicationController
     if @champion.update(champion_params)
       redirect_to @champion
     else
-      render 'edit'
+      render 'index'
     end
   end
 
@@ -55,7 +55,7 @@ class ChampionsController < ApplicationController
     @champion = Champion.find(params[:id])
     @champion.destroy
 
-    redirect_to 'admin'
+    redirect_to 'index'
   end
 
   def new
@@ -68,7 +68,7 @@ class ChampionsController < ApplicationController
     if @champion.save
       redirect_to @champion
     else
-      render 'new'
+      render 'index'
     end
   end
 
