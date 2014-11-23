@@ -1,6 +1,6 @@
 class ChampionsController < ApplicationController
   def self.maps
-    @@maps = [
+    [
       "Badlands",
       "Arctic Refuge",
       "Canis River",
