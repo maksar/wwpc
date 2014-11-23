@@ -28,6 +28,7 @@ class ChampionsController < ApplicationController
   end
 
 	def index
+		@title = 'Home'
     @champions = Champion.all
     @randomMaps = ChampionsController.maps.sample(3)
   end
