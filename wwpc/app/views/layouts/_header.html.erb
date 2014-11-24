@@ -2,10 +2,26 @@
 	<div class='header'></div>
 	<div id='navigation-bar'>
 		<ul>
-			<li class='active'><%= link_to 'Home', controller: 'champions' %>
-			<li><%= link_to 'Champions', controller: 'champions' %>
-			<li><%= link_to 'The Rules', controller: 'champions' %>
-			<li><%= link_to 'Register', controller: 'champions' %>
+			<% if @title == 'Home' %>
+				<li class='active'><%= link_to 'Home', controller: 'champions' %>
+			<% else %>
+				<li><%= link_to 'Home', controller: 'champions' %>
+			<% end %>
+			<% if @title == 'Champions' %>
+				<li class='active'><%= link_to 'Champions', controller: 'champions' %>
+			<% else %>
+				<li><%= link_to 'Champions', controller: 'champions' %>
+			<% end %>
+			<% if @title == 'The Rules' %>
+				<li class='active'><%= link_to 'The Rules', controller: 'champions' %>
+			<% else %>
+				<li><%= link_to 'The Rules', controller: 'champions' %>
+			<% end %>
+			<% if @title == 'Register' %>
+				<li class='active'><%= link_to 'Register', controller: 'champions' %>
+			<% else %>
+				<li><%= link_to 'Register', controller: 'champions' %>
+			<% end %>
 		</ul>
 	</div>
 </div>
