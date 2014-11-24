@@ -3,16 +3,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-	resources :champions do
+	resources :champions, path: "" do
 		collection do
 			get 'admin'
-			get 'devision/:division', to: 'champions#division', as: :division
+			get 'division/:division', to: 'champions#division', as: :division
 		end
 	end
 
   root 'champions#index'
 
-  get 'champions/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

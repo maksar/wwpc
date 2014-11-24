@@ -1,27 +1,27 @@
 <div class='header-wrapper'>
 	<div class='header'></div>
-	<div id='navigation-bar'>
+	<% if user_signed_in? == false %>
+		<div class='login'>
+			<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  			e-mail: <%= f.text_field :email %>
+  			password: <%= f.password_field :password %>
+  			<!--<%= f.check_box :remember_me %>
+  			<%= f.label :remember_me %>-->
+  			<%= f.submit 'Sign in' %>
+  			<!--<%= link_to "Forgot your password?", new_password_path(:user) %>-->
+			<% end %>
+		</div>
+	<% end %>
+	<div class='navigation-bar'>
 		<ul>
-			<% if @title == 'Home' %>
-				<li class='active'><%= link_to 'Home', controller: 'champions' %>
-			<% else %>
-				<li><%= link_to 'Home', controller: 'champions' %>
-			<% end %>
-			<% if @title == 'Champions' %>
-				<li class='active'><%= link_to 'Champions', controller: 'champions' %>
-			<% else %>
-				<li><%= link_to 'Champions', controller: 'champions' %>
-			<% end %>
-			<% if @title == 'The Rules' %>
-				<li class='active'><%= link_to 'The Rules', controller: 'champions' %>
-			<% else %>
-				<li><%= link_to 'The Rules', controller: 'champions' %>
-			<% end %>
-			<% if @title == 'Register' %>
-				<li class='active'><%= link_to 'Register', controller: 'champions' %>
-			<% else %>
-				<li><%= link_to 'Register', controller: 'champions' %>
-			<% end %>
+				<li class="<%= 'active' if @title == 'Home' %>"><%= link_to('Home', champions_path) %></li>
+				<li class="<%= 'active' if @title == 'Champions' %>"><%= link_to('Champions', champions_path) %></li>
+				<li class="<%= 'active' if @title == 'The Rules' %>"><%= link_to('The Rules', champions_path) %></li>
+				<% if user_signed_in? == false %>
+					<li class="<%= 'active' if @title == 'Register' %>"><%= link_to('Register', new_user_registration_path) %></li>
+				<% else %>
+					<li><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
+				<% end %>
 		</ul>
 	</div>
 </div>
