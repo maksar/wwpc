@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-	get 'home/index'
+	get 'home/index', path: "index"
+	get 'home/rules', path: "rules"
 
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
 
-	resources :champions, path: "" do
+	resources :champions do
 		collection do
 			get 'admin'
 			get 'division/:division', to: 'champions#division', as: :division

@@ -32,4 +32,9 @@ class HomeController < ApplicationController
     @champions = Champion.all
     @randomMaps = HomeController.maps.sample(3)
   end
+
+	def rules
+		@title = 'The Rules'
+	end
+
 end
