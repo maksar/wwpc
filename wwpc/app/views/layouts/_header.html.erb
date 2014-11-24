@@ -14,7 +14,7 @@
 	<% end %>
 	<div class='navigation-bar'>
 		<ul>
-				<li class="<%= 'active' if @title == 'Home' %>"><%= link_to('Home', champions_path) %></li>
+				<li class="<%= 'active' if @title == 'Home' %>"><%= link_to('Home', home_index_path) %></li>
 				<li class="<%= 'active' if @title == 'Champions' %>"><%= link_to('Champions', champions_path) %></li>
 				<li class="<%= 'active' if @title == 'The Rules' %>"><%= link_to('The Rules', champions_path) %></li>
 				<% if user_signed_in? == false %>

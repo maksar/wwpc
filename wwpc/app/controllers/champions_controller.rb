@@ -1,36 +1,7 @@
 class ChampionsController < ApplicationController
-  def self.maps
-    [
-      "Badlands",
-      "Arctic Refuge",
-      "Canis River",
-      "Cobalt Valley",
-      "Crimson Feud",
-      "Emerald Crater",
-      "Eye of the Storm",
-      "Fields of Isis",
-      "Finn's Revenge",
-      "Loki",
-      "Niflheim Final II",
-      "Open Palms",
-      "Open Waters",
-      "Point of Reach",
-      "Regor Vi Highlands",
-      "Roanoke Abyss",
-      "Saltrock Colony",
-      "Standing Stones",
-      "Syrtis Major",
-      "Theta Passage",
-      "Twin Rivers",
-      "Vya-3 Protectorate",
-      "White Fire"
-    ]
-  end
-
 	def index
-		@title = 'Home'
+		@title = 'Champions'
     @champions = Champion.all
-    @randomMaps = ChampionsController.maps.sample(3)
   end
 
   def division

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'knockouts/index'
+	get 'home/index'
 
   devise_for :users
 
