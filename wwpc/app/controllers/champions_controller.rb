@@ -1,17 +1,17 @@
 class ChampionsController < ApplicationController
-	def index
-		@title = 'Champions'
+  def index
+    @title = 'Champions'
     @champions = Champion.all
   end
 
   def division
     division = params.fetch(:division, '')
     @division_board = ChampionsByDivisionBoard.new(division)
-		@title = division.capitalize + ' - Division'
+    @title = division.capitalize + ' - Division'
   end
 
   def edit
-		@title = 'Edit champion'
+    @title = 'Edit champion'
     @champion = Champion.find(params[:id])
   end
 
@@ -33,7 +33,7 @@ class ChampionsController < ApplicationController
   end
 
   def new
-		@title = 'Add champion'
+    @title = 'Add champion'
     @champion = Champion.new
   end
 
