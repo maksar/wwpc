@@ -16,3 +16,8 @@
 	</li>
 	<li class="champion">sasin</li>
 </ul>
+
+<%= link_to('add new champion', new_champion_path) %>
+<% if can? :update, @champion %>
+  <%= link_to('add new champion', new_champion_path) %>
+<% end %>

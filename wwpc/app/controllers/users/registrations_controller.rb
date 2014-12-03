@@ -39,6 +39,10 @@ before_filter :configure_account_update_params, only: [:update]
 
   protected
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :activated, :email, :password, :password_confirmation) }
+  end
+
   # You can put the params you want to permit in the empty array.
   def configure_sign_up_params
     # devise_parameter_sanitizer.for(:sign_up) << :attribute
